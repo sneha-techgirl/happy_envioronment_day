@@ -246,6 +246,19 @@ button:hover {
     flex-shrink: 0;
   }
 
+  .intropage {
+  overflow-y: scroll !important;
+  height: auto !important;
+  min-height: 100vh;
+  padding-bottom: 80px !important;
+}
+
+.intropage h2 {
+  font-size: clamp(13px, 3vw, 22px) !important;
+  line-height: 1.6 !important;
+  padding: 15px !important;
+}
+
 }
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
