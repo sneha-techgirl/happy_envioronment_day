@@ -295,3 +295,29 @@ button:hover {
     object-fit: contain !important;
 }
 }
+
+/* Base styles for your action buttons */
+.nav-btn {
+    position: absolute !important; /* Forces it to override conflicting media queries */
+    bottom: 5% !important;        /* Keeps it perfectly uniform and low on the screen */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    
+    /* Make sure it has a nice consistent width */
+    width: 200px; 
+    border-radius: 25px;
+    border: 2px solid #fff;
+    padding: 10px 0;
+}
+
+/* Ensure the link inside takes up the full button space */
+.nav-btn a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
