@@ -288,4 +288,10 @@ button:hover {
     max-height: 150px !important;
     width: 100% !important;
   }
+
+  .earth-left, .earth-right {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain !important;
+}
 }
