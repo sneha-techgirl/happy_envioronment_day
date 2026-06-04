@@ -245,4 +245,34 @@ button:hover {
     left: auto !important;
     flex-shrink: 0;
   }
+
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .slides {
+    height: auto !important;
+    min-height: 100vh;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    padding: 15px !important;
+  }
+
+  .slides > div {
+    width: 45% !important;
+    flex-direction: column !important;
+  }
+
+  .slides h1 {
+    font-size: clamp(12px, 2vw, 18px) !important;
+    letter-spacing: 1px !important;
+  }
+
+  .slides h2 {
+    font-size: clamp(11px, 1.8vw, 16px) !important;
+  }
+
+  .slides img:not(.earth-left):not(.earth-right) {
+    max-height: 150px !important;
+    width: 100% !important;
+  }
 }
