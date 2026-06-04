@@ -1,0 +1,199 @@
+*{
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins', sans-serif;
+   box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.slides, .pages {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    text-align: left;
+}
+
+.slides img:not(.earth-left):not(.earth-right) {
+    position: relative;
+    z-index: 1;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+} 
+
+.slides h2 {
+    position: relative;
+    z-index: 1;
+    color: black;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.slides h1 {
+    position: relative;
+    z-index: 1;
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    letter-spacing: 10px;
+    font-size: 35px;
+}
+
+.earth-left,
+.earth-right {
+    position: absolute;
+    width: 280px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+.earth-left {
+    left: 40px;
+    transform: translateY(-50%) scaleX(-1);
+    animation-name: float-left;
+}
+
+.earth-right {
+    right: 40px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%); }
+    50%       { transform: translateY(calc(-50% - 18px)); }
+}
+
+@keyframes float-left {
+    0%, 100% { transform: translateY(-50%) scaleX(-1); }
+    50%       { transform: translateY(calc(-50% - 18px)) scaleX(-1); }
+}
+
+.slide-left {
+    justify-content: flex-start;
+    padding-left: 8%;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.pages {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.pages h1, .pages button {
+    position: relative;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.intropage {
+    position: relative;
+    padding: 40px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("climate.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.intropage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.intropage h2, .intropage button {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 30px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+.b {
+    position: static !important;
+    transform: none !important;
+    bottom: auto !important;
+    left: auto !important;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .slides h1 {
+        font-size: clamp(16px, 4vw, 28px) !important;
+    }
+
+    .slides h2 {
+        font-size: clamp(10px, 2.5vw, 18px) !important;
+        line-height: 1.4 !important;
+    }
+
+    .earth-left,
+    .earth-right {
+        width: clamp(60px, 12vw, 120px) !important;
+    }
+}
