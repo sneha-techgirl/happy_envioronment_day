@@ -183,6 +183,7 @@ button:hover {
 }
 
 @media screen and (max-width: 768px) {
+
   .slides h1 {
     font-size: clamp(14px, 3.5vw, 24px) !important;
     letter-spacing: 2px !important;
@@ -190,44 +191,58 @@ button:hover {
   }
 
   .slides h2 {
-    font-size: clamp(12px, 3vw, 18px) !important;
-    line-height: 1.5 !important;
+    font-size: clamp(13px, 3vw, 18px) !important;
+    line-height: 1.6 !important;
+    letter-spacing: normal !important;
   }
 
+  .slides {
+    height: auto !important;
+    min-height: 100vh;
+    padding: 20px !important;
+    flex-direction: column !important;
+  }
+
+  /* Stack the image+title div vertically */
+  .slides > div {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  /* Fix images in ways.html */
+  .slides img:not(.earth-left):not(.earth-right) {
+    width: 60% !important;
+    height: auto !important;
+    max-height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  /* Fix floating earth images */
   .earth-left,
   .earth-right {
     width: clamp(50px, 10vw, 100px) !important;
   }
 
-  /* Options page fix */
-  .slides > div {
-    flex-direction: column !important;
-    width: 95vw !important;
-    gap: 10px !important;
-  }
-
-  .slides > div h1 {
-    font-size: clamp(13px, 3vw, 20px) !important;
-    letter-spacing: 1px !important;
-    word-break: break-word;
-    max-width: 100%;
-  }
-
-  /* Fix button not overlapping text */
+  /* Fix button overlapping text */
   button {
     position: static !important;
     transform: none !important;
     bottom: auto !important;
     left: auto !important;
-    margin-top: 20px;
-    width: 80%;
+    margin-top: 20px !important;
+    width: 80% !important;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  /* Fix ways.html images */
-  .slides img:not(.earth-left):not(.earth-right) {
-    height: auto !important;
-    max-height: 250px;
-    width: 100% !important;
-    object-fit: cover;
+  .b {
+    position: static !important;
+    transform: none !important;
+    bottom: auto !important;
+    left: auto !important;
+    flex-shrink: 0;
   }
 }
